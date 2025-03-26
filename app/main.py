@@ -1,13 +1,13 @@
 from typing import Union
-
 from fastapi import FastAPI
+from app.core.config import settings
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"db_url": settings.database_url}
 
 
 @app.get("/items/{item_id}")
