@@ -7,4 +7,6 @@ Base = declarative_base()
 
     Base는 모든 모델이 상속받는 부모클래스이고
     FastAPI 프로젝트에서는 app/db/base.py로 빼두는 게 일반적
+
+    Base는 동적으로 생성되는 class 그 자체라서 다른 class에 부모 클래스로서 동작이 가능한 것
 """
