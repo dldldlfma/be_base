@@ -7,7 +7,7 @@ engine = create_async_engine(settings.database_url,echo=True,future=True)
 
 # Create Session Factory
 async_session = sessionmaker(
-    bine=engine,
+    bind=engine,
     class_=AsyncSession,
     expire_on_commit=False,
 )

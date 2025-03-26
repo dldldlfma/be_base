@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
-class UserCrate(BaseModel):
+class UserCreate(BaseModel):
     email: EmailStr
     password: str
     name: str

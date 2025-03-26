@@ -1,15 +1,10 @@
-from typing import Union
 from fastapi import FastAPI
-from app.core.config import settings
+from app.api.routes import user
 
 app = FastAPI()
 
+app.include_router(user.router)
 
 @app.get("/")
-def read_root():
-    return {"db_url": settings.database_url}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+async def root():
+    return {"message": "Hello, backend base 🏗️"}
